@@ -2,12 +2,24 @@
   "manifest_version": 3,
   "name": "Brightspace Lecture Downloader",
   "version": "2.0",
-  "description": "Downloades Lectures on brightspace",
-  "permissions": [],
+  "description": "Downloads Lectures on brightspace",
+  "permissions": ["activeTab", "scripting", "downloads"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "128": "icon128.png"
     }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.brightspace.com/*", "https://*/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon128.png"
   }
 }
