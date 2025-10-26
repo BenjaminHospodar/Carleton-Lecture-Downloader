@@ -1,25 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Brightspace Downloader",
-  "version": "1.0",
-  "description": "Downloaded Lectures on brightspace",
-  "permissions": [
-    "scripting",
-    "activeTab",
-    "tabs",
-    "debugger",
-    "declarativeContent"
-  ],
-  "host_permissions": ["https://brightspace.carleton.ca/d2l/le/content/*"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://brightspace.carleton.ca/d2l/le/content/*"],
-      "js": ["content-script.js"]
-    }
-  ],
+  "name": "Brightspace Lecture Downloader",
+  "version": "2.0",
+  "description": "Downloades Lectures on brightspace",
+  "permissions": [],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
