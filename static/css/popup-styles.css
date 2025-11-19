@@ -149,16 +149,16 @@ body {
 
 /* Output Container */
 .output-container {
-  background: #2b2b2b; /* slightly lighter for contrast */
+  background: #2b2b2b;
   border: 1px solid var(--notion-border);
   border-radius: 8px;
   padding: 15px;
   margin-top: 15px;
   min-height: 60px;
   overflow-y: auto;
-  font-size: 0.95rem; /* larger and more readable */
+  font-size: 0.95rem;
   color: var(--notion-text);
-  font-weight: 600; /* bolder for visibility */
+  font-weight: 600;
   transition: background-color 220ms ease, border-color 220ms ease,
     box-shadow 220ms ease;
 }
@@ -169,13 +169,11 @@ body {
   font-weight: 500;
 }
 
-/* Downloading state (shows spinner) */
 .output-container.downloading {
   border-color: rgba(181, 18, 27, 0.9);
   box-shadow: 0 6px 18px rgba(163, 14, 21, 0.08);
 }
 
-/* Success state - green */
 .output-container.success {
   background: linear-gradient(180deg, #163a17 0%, #0f2d12 100%);
   border-color: #1f7a1f;
@@ -188,7 +186,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* Error state */
 .output-container.error {
   border-color: #b53a3a;
   background: linear-gradient(180deg, #3a1b1b 0%, #2a1515 100%);
@@ -196,19 +193,16 @@ body {
   box-shadow: 0 6px 18px rgba(181, 58, 58, 0.08);
 }
 
-/* Ensure spinner is visible on dark background */
 .output-container .spinner-border {
   width: 1rem;
   height: 1rem;
   border-width: 0.18rem;
 }
 
-/* Make inline messages align well */
 .output-container .d-flex {
   align-items: center;
 }
 
-/* Instructions Content */
 .instructions-content {
   padding: 0;
 }
@@ -217,7 +211,6 @@ body {
   color: var(--notion-text);
 }
 
-/* GitHub Link */
 .github-link {
   display: block;
   text-decoration: none;
@@ -238,7 +231,6 @@ body {
   color: white;
 }
 
-/* Footer */
 footer {
   font-size: 0.75rem;
   text-align: center;
@@ -253,7 +245,6 @@ footer {
   width: 100%;
 }
 
-/* Error message styling */
 #errorMessage {
   color: #ff6b6b !important;
 }
