@@ -7,13 +7,13 @@
   "permissions": ["clipboardRead"],
 
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "pages/popup.html",
     "default_icon": {
-      "128": "128.png"
+      "128": "static/img/128.png"
     }
   },
 
   "icons": {
-    "128": "128.png"
+    "128": "static/img/128.png"
   }
 }

@@ -200,7 +200,6 @@ autoProcessBtn.addEventListener("click", async () => {
 
     const flavorIds = flavorMatch[1].split(",");
     const lastFlavorId = flavorIds[flavorIds.length - 1];
-    //may need to put different cases, v/1/ev/3 is diff for public videos
     const downloadUrl = `https://cfvod.kaltura.com/p/${partnerId}/sp/${partnerId}00/serveFlavor/entryId/${entryId}/v/1/ev/3/flavorId/${lastFlavorId}/name/a.mp4`;
 
     output.classList.remove("error", "success", "d-none");
