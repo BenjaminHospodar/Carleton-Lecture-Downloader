@@ -1,16 +1,16 @@
-﻿﻿# 🎓 Brightspace Lecture Downloader
+﻿## Brightspace Lecture Downloader
 
 A lightweight Chrome extension that allows you to download lecture videos from Brightspace with ease. Choose your preferred quality and download instantly.
 
-## ✨ Features
+## Features
 
-- **Auto Download**: One-click auto-download with the highest available quality
-- **Manual Mode**: Generate custom download links for multiple quality options
-- **Dark UI**: Modern, clean dark theme inspired by Notion
-- **Fast & Lightweight**: Minimal resource usage, optimized performance
-- **No Sign-in Required**: Works directly with your Brightspace debug info
+- **Auto Download**: One-click auto-download with the highest available quality.
+- **Manual Mode**: Generate custom download links for multiple quality options.
+- **Fast & Lightweight**: Minimal resource usage and optimized performance.
+- **No Sign-in Required**: Works out of the box with no account or email registration needed.
+- **Data Transparency**: No user data is collected. This service exists purely to make your life easier! 🙂
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage Instructions](#usage-instructions)
@@ -21,17 +21,31 @@ A lightweight Chrome extension that allows you to download lecture videos from B
 
 ---
 
-## 📥 Installation
+## ⬇️ Installation
 
-1. Clone or download this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable **Developer mode** (top-right corner)
-4. Click **Load unpacked** and select the project folder
-5. The extension should now appear in your Chrome toolbar
+You can install this Chrome extension via the official **Chrome Web Store** or by manually loading the source code (developer method).
+
+### Option 1: Chrome Web Store (Recommended)
+
+The easiest and most secure way to install.
+
+1.  Click the link below:
+    - **[Link to Chrome Web Store]**
+2.  Click **"Add to Chrome."**
+
+### Option 2: Manual Installation (Load Unpacked)
+
+Use this method to install the source code from this repository.
+
+1.  **Clone or Download** this repository.
+2.  Navigate to `chrome://extensions/` in your Chrome browser.
+3.  Enable **Developer mode** (top-right toggle).
+4.  Click **"Load unpacked"** and select the project folder that contains the `manifest.json` file.
+5.  The extension will now appear in your toolbar.
 
 ---
 
-## 🚀 Usage Instructions
+## Usage Instructions
 
 ### Auto Download (Recommended)
 
@@ -57,7 +71,7 @@ A lightweight Chrome extension that allows you to download lecture videos from B
 
 4. Click **"Generate Download Links"**
 5. Select your preferred quality from the available options
-6. Click **"Download Option"** button for your chosen quality
+6. Click **"Download Option"** button for your chosen quality (higher the number, better the quality)
 
    ![Manual Download](./docs/gifs/manual-download.gif)
 
@@ -69,100 +83,27 @@ A lightweight Chrome extension that allows you to download lecture videos from B
 
 ---
 
-## 🛠️ Development Setup
-
-### Prerequisites
-
-- Node.js (optional, for development tools)
-- Chrome browser
-- Text editor (VS Code recommended)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader.git
-cd Brightspace-Lec-Downloader
-
-# No npm dependencies required - this is a vanilla JavaScript extension
-```
-
 ### Project Structure
 
 ```
 Brightspace-Lec-Downloader/
 ├── static/
 │   ├── css/
-│   │   └── popup-styles.css        # Popup styling (dark theme)
+│   │   └── popup-styles.css
 │   ├── js/
-│   │   └── popup-controller.js     # Main extension logic
+│   │   └── popup-controller.js
 │   └── img/
-│       ├── 128.png                 # Extension icon
-│       └── Logo.svg                # Logo asset
+│       ├── 128.png
+│       └── Logo.svg
 ├── pages/
-│   └── popup.html                  # Popup UI
-├── manifest.json                   # Chrome extension manifest
-├── README.md                        # This file
+│   └── popup.html
+├── manifest.json
+├── README.md
 └── docs/
-    └── gifs/                        # GIFs for instructions
+    └── gifs/
 ```
 
-### Local Development
-
-1. Make changes to any files in `static/` or `pages/`
-2. Go to `chrome://extensions/`
-3. Click the **refresh** icon on the extension card to reload changes
-4. Test the extension in a new tab
-
-### Key Files Overview
-
-| File                            | Purpose                                             |
-| ------------------------------- | --------------------------------------------------- |
-| `manifest.json`                 | Extension configuration (permissions, entry points) |
-| `pages/popup.html`              | UI layout with tabs (Auto, Manual, Info)            |
-| `static/css/popup-styles.css`   | Carleton Red dark theme styling                     |
-| `static/js/popup-controller.js` | Event handlers, download logic, tab management      |
-| `static/img/128.png`            | Extension icon                                      |
-
-### Code Style
-
-- **No build process required** - Pure vanilla JavaScript and CSS
-- **ES6+ syntax** supported
-- **No external dependencies** except Bootstrap CDN for icons
-- Clean, readable code with JSDoc comments on complex functions
-
-### Testing
-
-1. Test Auto Download:
-
-   - Go to a Brightspace video page
-   - Copy debug info and use Auto Download
-   - Verify the video downloads with no quality options shown
-
-2. Test Manual Download:
-
-   - Paste debug info in Manual tab
-   - Verify all quality options appear
-   - Test downloading each quality option
-
-3. Test Error Handling:
-   - Test with invalid JSON
-   - Test with incomplete debug info
-   - Test without clipboard permissions
-
-### Building/Packaging
-
-No build step required! To package for distribution:
-
-```bash
-# Create a ZIP file for submission to Chrome Web Store
-zip -r brightspace-downloader.zip . \
-  -x "*.git*" "node_modules/*" ".env*"
-```
-
----
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -175,17 +116,17 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see LICENSE file for details.
 
 ---
 
-## 📞 Support
+## Support
 
 - **Issues**: Found a bug? [Open an issue](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/issues)
-- **Discussions**: Have a question? [Start a discussion](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/discussions)
+- **Discussions**: Have a question? [Email me!](malito:hello@benjaminhospodar.com)
 
 ---
 
-**Made with ❤️ by Benjamin Hospodar**
+**© 2025 Benjamin Hospodar**
