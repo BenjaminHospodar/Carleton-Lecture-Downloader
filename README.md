@@ -21,7 +21,7 @@ A lightweight Chrome extension that allows you to download lecture videos from B
 
 ---
 
-## ⬇️ Installation
+## Installation
 
 You can install this Chrome extension via the official **Chrome Web Store** or by manually loading the source code (developer method).
 
