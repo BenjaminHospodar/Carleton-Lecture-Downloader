@@ -1,4 +1,3 @@
-// --- DOM element references ---
 const jsonInput = document.getElementById("jsonInput");
 const processBtn = document.getElementById("processBtn");
 const autoProcessBtn = document.getElementById("autoProcessBtn");
@@ -8,8 +7,6 @@ const tabList = document.getElementById("myTab");
 const tabPanes = document.querySelectorAll(".tab-pane");
 const tabButtons = document.querySelectorAll(".nav-tabs .nav-link");
 
-// --- Custom Tab Switching and Visibility Utility ---
-
 /**
  * Hides or shows the shared output container based on the active tab.
  * Output is only visible on 'auto-pane' and 'manual-pane'.
@@ -17,10 +14,13 @@ const tabButtons = document.querySelectorAll(".nav-tabs .nav-link");
  */
 function handleTabVisibility(tabPaneId) {
   const isVisible = tabPaneId === "auto-pane" || tabPaneId === "manual-pane";
+  const hasContent =
+    output.innerHTML.trim() !== "" &&
+    !output.innerHTML.includes("error message");
 
-  if (isVisible) {
+  if (isVisible && hasContent) {
     output.classList.remove("d-none");
-  } else {
+  } else if (!isVisible) {
     output.classList.add("d-none");
   }
 }
@@ -32,7 +32,6 @@ function handleTabVisibility(tabPaneId) {
 function switchToTab(paneId) {
   const targetButton = document.getElementById(paneId.replace("-pane", "-tab"));
 
-  // 1. Hide all panes and remove 'active' from all buttons
   tabPanes.forEach((pane) => {
     pane.classList.remove("show", "active");
   });
@@ -41,25 +40,19 @@ function switchToTab(paneId) {
     btn.setAttribute("aria-selected", "false");
   });
 
-  // 2. Show the target pane and set the button as active
   const targetPane = document.getElementById(paneId);
   if (targetPane) {
     targetPane.classList.add("show", "active");
     targetButton.classList.add("active");
     targetButton.setAttribute("aria-selected", "true");
   }
-
-  // 3. Handle output visibility
-  handleTabVisibility(paneId);
 }
 
 function switchToManualTabWithError() {
   switchToTab("manual-pane");
-  // Show the general error message in the output box
   errorMessage.classList.remove("d-none");
 }
 
-// --- Event Listener for Tab Clicks ---
 tabButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     const targetId = event.currentTarget.dataset.target;
@@ -67,19 +60,15 @@ tabButtons.forEach((button) => {
   });
 });
 
-// Set initial visibility on load
 document.addEventListener("DOMContentLoaded", () => {
-  // 'auto-pane' is active by default in HTML
-  handleTabVisibility("auto-pane");
+  output.classList.add("d-none");
 });
 
-// --- Video Processing Logic ---
 function processDownload() {
-  // Ensure output is visible before processing
   const currentActivePane = document.querySelector(".tab-pane.active").id;
-  handleTabVisibility(currentActivePane);
 
   const inputText = jsonInput.value.trim();
+  output.classList.remove("d-none");
   output.innerHTML = '<p class="small text-muted mb-0">Processing data...</p>';
   errorMessage.classList.add("d-none");
 
@@ -115,7 +104,6 @@ function processDownload() {
   const flavorIds = flavorMatch[1].split(",");
   const baseUrl = `https://cfvod.kaltura.com/p/${partnerId}/sp/${partnerId}00/serveFlavor/entryId/${entryId}/v/1/ev/3/flavorId/`;
 
-  // Clear and build the output links
   output.innerHTML = "";
 
   const header = document.createElement("div");
@@ -135,7 +123,6 @@ function processDownload() {
     btn.addEventListener("click", async () => {
       btn.disabled = true;
 
-      // Show loading spinner
       const spinner = document.createElement("span");
       spinner.className = "spinner-border spinner-border-sm";
       btn.innerHTML = "";
@@ -170,24 +157,18 @@ function processDownload() {
     output.appendChild(btn);
   });
 
-  return true; // Processing was successful (links generated)
+  return true;
 }
 
-// --- Event Handlers ---
-
-// Manual Process button handler
 processBtn.addEventListener("click", () => {
   processDownload();
 });
 
-// Auto Process button handler - auto-download last flavorId
 autoProcessBtn.addEventListener("click", async () => {
   try {
-    // 1. Paste from clipboard
     const text = await navigator.clipboard.readText();
     jsonInput.value = text;
 
-    // Try to parse clipboard JSON. If parsing fails, fall back to normal processing UI.
     let data;
     try {
       data = JSON.parse(text);
@@ -219,16 +200,15 @@ autoProcessBtn.addEventListener("click", async () => {
 
     const flavorIds = flavorMatch[1].split(",");
     const lastFlavorId = flavorIds[flavorIds.length - 1];
+    //may need to put different cases, v/1/ev/3 is diff for public videos
     const downloadUrl = `https://cfvod.kaltura.com/p/${partnerId}/sp/${partnerId}00/serveFlavor/entryId/${entryId}/v/1/ev/3/flavorId/${lastFlavorId}/name/a.mp4`;
 
-    // Provide immediate feedback in the output area
-    output.classList.remove("error", "success");
+    output.classList.remove("error", "success", "d-none");
     output.classList.add("downloading");
     output.innerHTML =
       '<div class="d-flex"><span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span><span class="small text-light">Automaticly downloading best option...</span></div>';
     handleTabVisibility("auto-pane");
 
-    // Perform the download
     try {
       const res = await fetch(downloadUrl);
       if (!res.ok) throw new Error("Failed to fetch video: " + res.statusText);
@@ -255,7 +235,6 @@ autoProcessBtn.addEventListener("click", async () => {
       switchToManualTabWithError();
     }
   } catch (err) {
-    // Handle critical clipboard read failure (Permission denied)
     jsonInput.value = "";
     switchToManualTabWithError();
     output.classList.remove("downloading", "success");

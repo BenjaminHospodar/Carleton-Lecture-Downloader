@@ -1,12 +1,11 @@
-/* Notion Dark Mode Inspired Variables (Now with Dark Carleton Red) */
 :root {
   --notion-bg: #191919;
   --notion-card-bg: #222222;
   --notion-text: #e0e0e0;
   --notion-text-subtle: #8f8f8f;
-  --carleton-dark-red: #a30e15; /* Primary button color */
-  --carleton-red-hover: #7c0b11; /* Button hover color */
-  --carleton-red-bright: #b5121b; /* Used for input focus/accents */
+  --carleton-dark-red: #a30e15;
+  --carleton-red-hover: #7c0b11;
+  --carleton-red-bright: #b5121b;
   --notion-border: #333333;
 }
 
@@ -33,14 +32,12 @@ body {
   border-bottom: none;
 }
 
-/* New: Separator line */
 .header-separator {
   height: 1px;
   background-color: var(--notion-border);
   margin: 8px 0 0 0;
 }
 
-/* Container for logo and title */
 .header-content {
   display: flex;
   align-items: center;
@@ -48,11 +45,13 @@ body {
   margin-bottom: 0;
 }
 
-/* Logo styling */
 .app-logo {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
   margin-right: 8px;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .app-header .header-title {
@@ -70,7 +69,6 @@ body {
   padding: 20px;
 }
 
-/* --- Tabs Styling --- */
 .nav-tabs {
   border-bottom: none;
   background-color: var(--notion-card-bg);
@@ -107,9 +105,8 @@ body {
   border-color: transparent;
 }
 
-/* --- Tab Content and Input/Button Styling --- */
 .tab-content {
-  padding-top: 0; /* REMOVED TOP PADDING for tighter look */
+  padding-top: 0;
 }
 
 .text-muted-notion {
@@ -119,7 +116,6 @@ body {
   color: var(--notion-text) !important;
 }
 
-/* Primary Button (Dark Carleton Red) */
 .btn-primary-notion {
   background-color: var(--carleton-dark-red);
   border: none;
@@ -134,7 +130,6 @@ body {
   color: white;
 }
 
-/* Textarea/Input Styling */
 .form-control-notion {
   background-color: #333333;
   color: var(--notion-text);
@@ -159,7 +154,7 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin-top: 15px;
-  max-height: 200px;
+  min-height: 60px;
   overflow-y: auto;
   font-size: 0.95rem; /* larger and more readable */
   color: var(--notion-text);
@@ -215,7 +210,7 @@ body {
 
 /* Instructions Content */
 .instructions-content {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .instructions-content ol {
