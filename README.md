@@ -1,4 +1,4 @@
-﻿## Brightspace Lecture Downloader
+﻿## Carleton Lecture Downloader
 
 A lightweight Chrome extension that allows you to download lecture videos from Brightspace with ease. Choose your preferred quality and download instantly.
 
@@ -130,3 +130,4 @@ This project is licensed under the MIT License - see LICENSE file for details.
 ---
 
 **© 2025 Benjamin Hospodar**
+
