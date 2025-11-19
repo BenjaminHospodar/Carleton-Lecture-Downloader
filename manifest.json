@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Brightspace Lecture Downloader",
+  "name": "Carleton Lecture Downloader",
   "version": "1.0.0",
-  "description": "Downloads Lectures on brightspace",
+  "description": "Downloads Lectures on Brightspace and Mediaspace",
 
   "permissions": ["clipboardRead"],
 
