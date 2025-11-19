@@ -29,7 +29,7 @@
     <header class="app-header">
       <div class="header-content">
         <img src="128.png" alt="App Logo" class="app-logo" />
-        <h1 class="header-title mb-3">Carleton Lecture Downloader</h1>
+        <h1 class="header-title text-center">Carleton Lecture Downloader</h1>
       </div>
       <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -84,8 +84,8 @@
           tabindex="0"
         >
           <p class="small text-muted-notion mb-3">
-            <strong>Auto Mode</strong> attempts to immediately paste the
-            clipboard content and generate links.
+            Automatically downloads the lecture with the highest quality based
+            on debug info in clipboard.
           </p>
           <div class="d-grid gap-2">
             <button id="autoProcessBtn" class="btn btn-primary-notion">
@@ -163,7 +163,7 @@
         </div>
       </div>
 
-      <div id="output" class="output-container">
+      <div id="output" class="output-container d-none">
         <p id="errorMessage" class="text-danger fw-bold mt-2 d-none">
           Error: Could not process data. Please check the JSON in Manual Mode.
         </p>
