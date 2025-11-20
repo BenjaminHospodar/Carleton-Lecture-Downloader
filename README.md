@@ -19,8 +19,6 @@ A lightweight Chrome extension that allows you to download lecture videos from B
 - [Contributing](#contributing)
 - [License](#license)
 
----
-
 ## Installation
 
 You can install this Chrome extension via the official **Chrome Web Store** or by manually loading the source code (developer method).
@@ -42,8 +40,6 @@ Use this method to install the source code from this repository.
 3.  Enable **Developer mode** (top-right toggle).
 4.  Click **"Load unpacked"** and select the project folder that contains the `manifest.json` file.
 5.  The extension will now appear in your toolbar.
-
----
 
 ## Usage Instructions
 
@@ -81,12 +77,15 @@ Use this method to install the source code from this repository.
 - **No quality options shown**: Ensure you copied the correct debug info from the video player
 - **Download fails**: Check your internet connection and that the video is publicly accessible
 
----
+## Support
+
+- **Issues**: Found a bug? [Open an issue](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/issues)
+- **Discussions**: Have a question? [Email me!](malito:hello@benjaminhospodar.com)
 
 ### Project Structure
 
 ```
-Brightspace-Lec-Downloader/
+Carleton-Lecture-Downloader/
 ├── static/
 │   ├── css/
 │   │   └── popup-styles.css
@@ -114,20 +113,9 @@ Contributions are welcome! Please follow these steps:
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request
 
----
 
 ## License
 
 This project is licensed under the MIT License - see LICENSE file for details.
 
----
-
-## Support
-
-- **Issues**: Found a bug? [Open an issue](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/issues)
-- **Discussions**: Have a question? [Email me!](malito:hello@benjaminhospodar.com)
-
----
-
 **© 2025 Benjamin Hospodar**
-
