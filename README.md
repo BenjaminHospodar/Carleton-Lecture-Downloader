@@ -71,17 +71,6 @@ Use this method to install the source code from this repository.
 
    ![Manual Download](./docs/gifs/manual-download.gif)
 
-### Troubleshooting
-
-- **Clipboard access denied**: Try using Manual Mode and paste the debug info manually
-- **No quality options shown**: Ensure you copied the correct debug info from the video player
-- **Download fails**: Check your internet connection and that the video is publicly accessible
-
-## Support
-
-- **Issues**: Found a bug? [Open an issue](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/issues)
-- **Discussions**: Have a question? [Email me!](malito:hello@benjaminhospodar.com)
-
 ### Project Structure
 
 ```
@@ -101,21 +90,21 @@ Carleton-Lecture-Downloader/
 └── docs/
     └── gifs/
 ```
+### Troubleshooting
 
-## Contributing
+- **Clipboard access denied**: Try using Manual Mode and paste the debug info manually
+- **No quality options shown**: Ensure you copied the correct debug info from the video player
+- **Download fails**: Check your internet connection and that the video is publicly accessible
 
-Contributions are welcome! Please follow these steps:
+### Support
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit with clear messages (`git commit -m 'Add amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
+- **Issues**: Found a bug? [Open an issue](https://github.com/BenjaminHospodar/Brightspace-Lec-Downloader/issues)
+- **Discussions**: Have a question? [Email me!](https://https://github.com/BenjaminHospodar/Carleton-Lecture-Downloader/discussions)
 
 ## License
 
 This project is licensed under the MIT License - see LICENSE file for details.
 
+
 **© 2025 Benjamin Hospodar**
+
